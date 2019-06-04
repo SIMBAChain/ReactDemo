@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://speregrine.github.io/ReactDemo/",
+  "homepage": "https://simbachain.github.io/ReactDemo/",
   "dependencies": {
     "axios": "^0.18.1",
     "ethers": "^4.0.27",
