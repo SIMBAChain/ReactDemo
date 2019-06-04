@@ -1,0 +1,376 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+*{
+       font-family: 'Raleway', sans-serif;
+}
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+    background: #343E3B;
+    border: 2px solid white;
+    float: left;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 34px;
+   
+    
+    margin-right: -1px;
+    margin-top: -1px;
+  
+    text-align: center;
+     height: 110px;
+    width: 110px;
+    color: #cad12c;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row; 
+    
+   
+}
+.game-board{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.game-info {
+  
+    
+    
+   position:absolute; /*it can be fixed too*/
+    left:340px; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    
+}
+
+
+.board
+{
+         background-color: white;  
+    width: 40%;
+    height: 80%;
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    /*this to solve "the content will not be cut when the window is smaller than the content": */   
+    max-width:100%;
+    max-height:100%;
+
+    border: 2px solid grey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+
+
+
+.body
+{
+background-color: #343E3B;    
+width: 100%;
+height: 100%;
+position:absolute; /*it can be fixed too*/
+left:0; right:0;
+top:0; bottom:0;
+margin:auto;
+/*this to solve "the content will not be cut when the window is smaller than the content": */   
+max-width:100%;
+max-height:100%;
+overflow:auto;
+
+}
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 3px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.bigbutton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 3px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.animatedbutton {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #09A6DF; /* Green */
+    color: white;
+      text-decoration: none;
+    display: inline-block;
+     border: none;
+}
+.greenbutton {
+    background-color: #cad12c;
+    color: black;
+}
+
+.animatedbutton:hover {
+  background-color: rgba(255, 255, 255, 0); 
+  color: black;
+}
+table {
+  border: 1px solid grey;
+   
+}
+tr{
+     overflow:hidden;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.walletinfo {
+     border: 1px solid grey;
+    padding: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+   
+}
+
+
+
+/* Smaller Screens not smartphones*/
+@media only screen and (max-width: 1250px) {
+.square {
+    background: #343E3B;
+    border: 2px solid white;
+    float: left;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 34px;
+   
+    margin-right: -1px;
+    margin-top: -1px;
+  
+    text-align: center;
+     height: 110px;
+    width: 110px;
+    color: #cad12c;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+    .board
+{
+         background-color: white;  
+    width: 80%;
+    height: 95%;
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    /*this to solve "the content will not be cut when the window is smaller than the content": */   
+    max-width:100%;
+    max-height:100%;
+
+    border: 2px solid grey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+    .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 4px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+    .bigbutton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 3px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.animatedbutton {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #09A6DF; /* Green */
+    color: white;
+}
+.greenbutton {
+    background-color: #cad12c;
+    color: black;
+}
+.animatedbutton:hover {
+  background-color: white; /* Green */
+  color: black;
+}
+    .game-info {
+  
+    
+    
+   position:absolute; /*it can be fixed too*/
+    left:350px; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    
+} 
+}
+
+
+
+/* Smartphones ----------- */
+@media only screen and (max-width: 650px) {
+ .square {
+    background: #343E3B;
+    border: 2px solid white;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+   
+    margin-right: -1px;
+    margin-top: -1px;
+  
+    text-align: center;
+     height: 65px;
+    width: 65px;
+    color: #cad12c;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+    .board
+{
+         background-color: white;  
+    width: 100%;
+    height: 95%;
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    /*this to solve "the content will not be cut when the window is smaller than the content": */   
+    max-width:100%;
+    max-height:100%;
+
+    border: 2px solid grey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+    .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 4px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+    .bigbutton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 3px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.animatedbutton {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #09A6DF; /* Green */
+    color: white;
+}
+.greenbutton {
+    background-color: #cad12c;
+    color: black;
+}
+.animatedbutton:hover {
+  background-color: white; /* Green */
+  color: black;
+}
+    .game-info {
+  
+    
+    
+   position:absolute; /*it can be fixed too*/
+    left:220px; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    
+}
+    
+    .walletinfo {
+     border: 1px solid grey;
+    padding: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+font-size: 10px;
+   
+}
+}
+
+
+
