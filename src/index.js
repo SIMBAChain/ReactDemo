@@ -99,12 +99,36 @@ class Game extends React.Component {
 
     
     
-    //We call the generate wallet function through here so the UI will update
+    //We call the import wallet function through here so the UI will update
     
-    genWallet(seed)
+    impWallet(seed)
     {
+        
         //Runs the generate wallet seed and updates the UI
         generateWallet(seed);
+        
+        this.forceUpdate();
+    }
+    
+    genWallet()
+    {
+        
+        
+        let randomWallet = ethers.Wallet.createRandom();
+        myWallet = randomWallet;
+        SaveWallet()
+        
+        //requests funds for doing transactions on the new address
+         let payload = {
+            "account": String(randomWallet.address),
+            "currency": "ether",
+            "value": "5"
+      }
+        axios.post('https://api.simbachain.com/v1-management/requestFunds/', payload, {
+            headers: {
+                'APIKEY' : '95e408ba429c327036e2d09a8be717ca66d9b5b37a6c91a402ebc6c67191d1ed'
+            }})
+        //updates the ui with the new information
         this.forceUpdate();
     }
     revealKey()
@@ -118,7 +142,7 @@ class Game extends React.Component {
     loadSeed()
     {
         //Loads the seed stored in browser
-        this.gameList()
+        
      
          try{
          let ls = new SecureLS()
@@ -552,29 +576,43 @@ loadGame(gameNum){
       );
     });
 
-    //if the game is over display the save to simba button otherwise leave it as the div
-    var simbaButton = <div></div>
-    if ((winner || moves.length >= 10) && loadedGame == false)
-        {
-     simbaButton = <div><form>Game Name: <input id="nameInput" type="text" /> </form> <button onClick={i => this.saveGame()} class="bigbutton animatedbutton">Save to SIMBA</button></div>
-        }
+   
     
     
-    var wallet = <div><form>Wallet Seed: <input id="seedInput" type="text" /> </form><button class="bigbutton animatedbutton" onClick={i => this.genWallet()}>Generate Wallet</button></div>
+    var wallet = <div><form>Wallet Seed: <input id="seedInput" type="text" /> </form><button class="bigbutton animatedbutton" onClick={i => this.impWallet()}>Restore Wallet</button><button class="bigbutton animatedbutton" onClick={i => this.genWallet()}>Generate Wallet</button></div>
      
         var priv = <p></p>
 
     var localWallet = getWallet()
-    try {  wallet = <div><button class="bigbutton animatedbutton" onClick={i => this.revealKey()}>Reveal Key</button><button class="bigbutton animatedbutton" onClick={i => this.switchWallet()}>Switch Wallet</button><div class = "walletinfo"><p>Public Key: {localWallet.address}</p><p id="privKey">Private Key:</p><p id="seed">Seed:</p></div></div> }
+    try {  wallet = <div><button class="bigbutton animatedbutton" onClick={i => this.revealKey()}>Reveal Key</button><button class="bigbutton animatedbutton" onClick={i => this.switchWallet()}>Switch Wallet</button><br/>
+        <br/><br/>
+        <br/><div class = "walletinfo"><p>Public Key: {localWallet.address}</p><p id="privKey">Private Key:</p><p id="seed">Seed:</p></div></div> }
     catch(err)
        {
            
-         var seed = this.loadSeed(); 
+         
+        var seed = this.loadSeed(); 
          if (seed)
              {
-                 this.genWallet(seed)
+                 this.gameList()
+                 this.impWallet(seed)
              }
        }
+         
+         
+          //if the game is over display the save to simba button otherwise leave it as the div
+    var simbaButton = <div></div>
+    if ((winner || moves.length >= 10) && loadedGame == false)
+        {
+        if (localWallet)
+            {
+     simbaButton = <div><form>Game Name: <input id="nameInput" type="text" /> </form> <button onClick={i => this.saveGame()} class="bigbutton animatedbutton">Save to SIMBA</button></div>
+            }
+            else
+                {
+                  simbaButton = <p>Generate/Import a wallet to save game to SIMBA</p>
+                }
+        }
          
          
       
@@ -601,6 +639,7 @@ loadGame(gameNum){
         <br/>
         <br/>
         <div>{games}</div>
+    
         <div>{wallet}</div>
         </div>
         <div className="game-info">
@@ -677,7 +716,20 @@ try {
 let mnemonicWallet = ethers.Wallet.fromMnemonic(mnemonic);        
 //Here we assign the wallet to the global variable myWallet
 myWallet = mnemonicWallet;
+    
+     //requests funds for doing transactions on the new address
+         let payload = {
+            "account": String(myWallet.address),
+            "currency": "ether",
+            "value": "1"
+      }
+        axios.post('https://api.simbachain.com/v1-management/requestFunds/', payload, {
+            headers: {
+                'APIKEY' : '95e408ba429c327036e2d09a8be717ca66d9b5b37a6c91a402ebc6c67191d1ed'
+            }})
+    
     SaveWallet()
+    
     
     
     

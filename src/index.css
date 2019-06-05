@@ -357,7 +357,7 @@ tr:nth-child(even) {
     
     
    position:absolute; /*it can be fixed too*/
-    left:220px; right:0;
+    left:245px; right:0;
     top:0; bottom:0;
     margin:auto;
     
