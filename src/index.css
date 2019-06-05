@@ -8,6 +8,30 @@ body {
   margin: 20px;
 }
 
+a{
+    text-decoration: none;
+    
+}
+
+a:link {
+  color: #09A6DF;
+}
+
+/* visited link */
+a:visited {
+  color: #09A6DF;
+}
+
+/* mouse over link */
+a:hover {
+  color: #cad12c;
+}
+
+/* selected link */
+a:active {
+  color: #343E3B;
+}
+
 ol, ul {
   padding-left: 30px;
 }

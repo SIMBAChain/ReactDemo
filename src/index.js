@@ -641,6 +641,9 @@ loadGame(gameNum){
         <div>{games}</div>
     
         <div>{wallet}</div>
+        <br/>
+       
+        <div> <a href = "https://reactdemo.readthedocs.io/en/latest/">Read the docs</a></div>
         </div>
         <div className="game-info">
           <div>{status}</div>
