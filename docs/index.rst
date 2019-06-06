@@ -14,7 +14,7 @@ NodeJS link: https://nodejs.org/en/
 
 .. _contract:
 Smart Contract
-************
+**************
 
 pragma solidity ^0.4.24;
 
