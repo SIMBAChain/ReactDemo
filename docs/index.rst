@@ -69,5 +69,7 @@ Converting the React Demo example to your app
    * Guide for deploying a react application to Github pages: https://medium.com/the-andela-way/how-to-deploy-your-react-application-to-github-pages-in-less-than-5-minutes-8c5f665a2d2a
 
 Based off of this https://reactjs.org/tutorial/tutorial.html
+
 Github Repo https://github.com/SIMBAChain/ReactDemo
+
 React Demo https://simbachain.github.io/ReactDemo/
