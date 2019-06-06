@@ -58,10 +58,27 @@ Before Starting make sure you have an account on the Simba Dashboard and an Ethe
 Converting the React Demo example to your app
 ***************
 * Everything you need to change is inside of index.js
-* Changing the url
-   * placeholder
-* Changing the API Keys
-   * placeholder
+* Changing the url to your own
+   * ~line 127
+   * ~line 168
+   * ~line 228
+   * ~line 482
+   * ~line 516
+   * ~line 729
+   
+* Changing the Configuration API Keys(make sure this isn't a application API key)
+   * ~line 129
+   * ~line 731
+   
+* Changing the Application API Keys(make sure this isn't a configuration API key)
+   * ~line 170
+   * ~line 230
+   * ~line 484
+   * ~line 518
+   
+
+
+
 * Run locally
    * with a terminal at the project folder run npm start
    * your project should be at localhost:3000
