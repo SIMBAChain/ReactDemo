@@ -406,7 +406,7 @@ loadGame(gameNum){
         
         
         
-        var apiKey = "8fbfe71045403b1a0c36d73c4160f778dda31bbd2249d20cf98e3485f5743933";
+        
        
         var moves = [];
         for (var i = 0; i < this.state.history.length; i++)
