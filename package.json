@@ -11,7 +11,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
     "secure-ls": "^1.2.5",
-    "yarn": "^1.16.0"
+    "yarn": "^1.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
